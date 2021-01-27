@@ -1,3 +1,8 @@
+@font-face {
+  font-family: SnapsTasteChristmas;
+  src: url("../public/snaps_taste_christmas/Snaps\ Taste\ Christmas.otf")
+    format("opentype");
+}
 :root {
   margin: 0;
   padding: 0;
@@ -21,6 +26,42 @@ body {
     var(--medium),
     var(--light)
   );
+}
+nav h1 {
+  font-family: SnapsTasteChristmas;
+  font-size: 5em;
+}
+nav h2,
+nav #dropdown {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 1rem 0;
+  text-align: center;
+  margin: 0;
+}
+/* nav #dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+nav h2 {
+  font-size: 2em;
+}
+nav #dropdown {
+  font-size: 1.5rem;
+}
+nav #dropdown .nav-links {
+  /* display: flex;
+  justify-content: space-around; */
+  text-align: center;
+}
+nav #dropdown .nav-links a {
+  color: var(--accent);
+}
+nav #dropdown .nav-links a:hover,
+nav h2:hover,
+nav .lnr-chevron-up:hover {
+  cursor: pointer;
 }
 #container {
   display: flex;
@@ -68,4 +109,7 @@ article h1 {
 .button-group span:hover {
   background-color: var(--accent);
   cursor: pointer;
+}
+#dropdown {
+  display: none;
 }
