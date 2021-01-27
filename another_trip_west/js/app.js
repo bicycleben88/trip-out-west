@@ -6,26 +6,31 @@ $(() => {
   const $prevButton = $("#prev");
   const $closeButton = $("#close");
   const $dropdownButton = $("#dropdown-button");
-  const $chevronUp = $(".lnr-chevron-up");
   const $mHeader = $("#m-header");
   const $mText = $("#m-text");
   const $mImage = $("#m-image");
   const $mImageText = $("#m-image-text");
   const $dropdown = $("#dropdown");
+  const $stamp = $(".stamp");
+  const $stampText = $(".stamp-text");
   let statePictures = [];
   let pictureIndex = 0;
+  let stateIndex = 0;
 
   const makeApiCall = async () => {
     const response = await fetch("http://localhost:3000/states");
     const data = await response.json();
-    await createModal(data[0]);
+    await createModal(data[stateIndex]);
   };
 
   const createModal = (state) => {
     state.pictures.map((picture) => statePictures.push(picture));
     $mHeader.text(`${state.name}`);
     $mText.text(`${state.entry}`);
-    $mImage.attr(`src`, statePictures[pictureIndex].url);
+    $mImage.attr({
+      src: statePictures[pictureIndex].url,
+      alt: statePictures[pictureIndex].location,
+    });
     $mImageText.text(`${statePictures[pictureIndex].location}`);
     $modal.css("display", "flex");
     $testButton.hide();
@@ -43,7 +48,10 @@ $(() => {
     } else {
       pictureIndex = 0;
     }
-    $mImage.attr(`src`, statePictures[pictureIndex].url);
+    $mImage.attr({
+      src: statePictures[pictureIndex].url,
+      alt: statePictures[pictureIndex].location,
+    });
     $mImageText.text(`${statePictures[pictureIndex].location}`);
   };
 
@@ -57,18 +65,26 @@ $(() => {
     $mImageText.text(`${statePictures[pictureIndex].location}`);
   };
 
-  const openDropdown = () => {
-    $dropdown.slideDown();
+  const toggleDropdown = () => {
+    $dropdown.slideToggle();
   };
 
-  const closeDropDown = () => {
-    $dropdown.slideUp();
+  const revealText = (event) => {
+    // display text over stamp
+    $(event.target).children().show(400);
+    // match stateIndex with element id
+    stateIndex = $(event.target).attr("id");
+  };
+
+  const hideText = () => {
+    $stampText.hide(400);
   };
 
   $testButton.on("click", makeApiCall);
   $nextButton.on("click", showNextPicture);
   $prevButton.on("click", showPrevPicture);
   $closeButton.on("click", closeModal);
-  $dropdownButton.on("click", openDropdown);
-  $chevronUp.on("click", closeDropDown);
+  $dropdownButton.on("click", toggleDropdown);
+  $stamp.hover(revealText, hideText);
+  $stampText.on("click", makeApiCall);
 });
