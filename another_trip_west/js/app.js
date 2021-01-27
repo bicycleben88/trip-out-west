@@ -5,10 +5,13 @@ $(() => {
   const $nextButton = $("#next");
   const $prevButton = $("#prev");
   const $closeButton = $("#close");
+  const $dropdownButton = $("#dropdown-button");
+  const $chevronUp = $(".lnr-chevron-up");
   const $mHeader = $("#m-header");
   const $mText = $("#m-text");
   const $mImage = $("#m-image");
   const $mImageText = $("#m-image-text");
+  const $dropdown = $("#dropdown");
   let statePictures = [];
   let pictureIndex = 0;
 
@@ -54,8 +57,18 @@ $(() => {
     $mImageText.text(`${statePictures[pictureIndex].location}`);
   };
 
+  const openDropdown = () => {
+    $dropdown.slideDown();
+  };
+
+  const closeDropDown = () => {
+    $dropdown.slideUp();
+  };
+
   $testButton.on("click", makeApiCall);
   $nextButton.on("click", showNextPicture);
   $prevButton.on("click", showPrevPicture);
   $closeButton.on("click", closeModal);
+  $dropdownButton.on("click", openDropdown);
+  $chevronUp.on("click", closeDropDown);
 });
