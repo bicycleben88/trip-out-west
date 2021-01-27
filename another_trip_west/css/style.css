@@ -3,6 +3,7 @@
   src: url("../public/snaps_taste_christmas/Snaps\ Taste\ Christmas.otf")
     format("opentype");
 }
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=EB+Garamond&display=swap");
 :root {
   margin: 0;
   padding: 0;
@@ -26,6 +27,13 @@ body {
     var(--medium),
     var(--light)
   );
+  font-family: "EB Garamond", serif;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 nav h1 {
   font-family: SnapsTasteChristmas;
@@ -39,11 +47,6 @@ nav #dropdown {
   text-align: center;
   margin: 0;
 }
-/* nav #dropdown {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
 nav h2 {
   font-size: 2em;
 }
@@ -51,9 +54,8 @@ nav #dropdown {
   font-size: 1.5rem;
 }
 nav #dropdown .nav-links {
-  /* display: flex;
-  justify-content: space-around; */
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 nav #dropdown .nav-links a {
   color: var(--accent);
@@ -64,9 +66,10 @@ nav .lnr-chevron-up:hover {
   cursor: pointer;
 }
 #container {
-  display: flex;
+  position: absolute;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 #modal {
   display: none;
@@ -87,6 +90,7 @@ article p {
 }
 article h1 {
   font-size: 2em;
+  font-family: "Dancing Script", cursive;
 }
 #close {
   position: absolute;
@@ -112,4 +116,24 @@ article h1 {
 }
 #dropdown {
   display: none;
+}
+.stamp {
+  width: 150px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.stamp-text {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: var(--black);
+  width: 150px;
+  height: 100px;
+  color: var(--white);
+  font-size: 1.5rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
 }
