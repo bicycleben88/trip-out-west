@@ -4,7 +4,7 @@
 >
 > https://another-trip-out-west.vercel.app
 
-![Landing page to Another Trip Out West](https://i.imgur.com/2z4JlUy.png)
+![Landing page to Another Trip Out West](https://i.imgur.com/GrSgGIi.png)
 
 ## Technologies used:
 
