@@ -15,18 +15,16 @@
   --accent: #f1b24a;
   --white: #f0f0f0;
   --black: #0f0f0f;
+  --gray: #d3d3d3;
 }
 html {
   height: 100vh;
 }
 body {
-  background-color: var(--dark);
-  background-image: linear-gradient(
-    to top right,
-    var(--dark),
-    var(--medium),
-    var(--light)
-  );
+  background-color: var(--medium);
+  background-image: linear-gradient(to top, var(--medium) 20%, var(--white));
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: "EB Garamond", serif;
 }
 main {
@@ -34,6 +32,7 @@ main {
   flex-direction: column;
   align-items: center;
   position: relative;
+  padding-top: 1rem;
 }
 nav h1 {
   font-family: SnapsTasteChristmas;
@@ -41,7 +40,6 @@ nav h1 {
 }
 nav h2,
 nav #dropdown {
-  background-color: var(--black);
   color: var(--white);
   padding: 1rem 0;
   text-align: center;
@@ -49,33 +47,49 @@ nav #dropdown {
 }
 nav h2 {
   font-size: 2em;
+  background-color: var(--medium);
 }
 nav #dropdown {
   font-size: 1.5rem;
+  background-color: var(--dark);
 }
-nav #dropdown .nav-links {
-  display: flex;
-  justify-content: space-around;
+nav #dropdown strong {
+  color: var(--white);
 }
 nav #dropdown .nav-links a {
-  color: var(--accent);
+  color: var(--gray);
+  display: block;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
 }
 nav #dropdown .nav-links a:hover,
-nav h2:hover,
-nav .lnr-chevron-up:hover {
+nav h2:hover {
   cursor: pointer;
 }
-#container {
-  position: absolute;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+nav #dropdown .nav-links a:hover {
+  text-decoration: underline;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section h2 {
+  font-size: 3em;
+}
+section h3 {
+  font-size: 1.5em;
+}
+section h3,
+section h2 {
+  text-align: center;
+  color: var(--white);
 }
 #modal {
   display: none;
   flex-direction: column;
   padding: 0.5rem;
-  position: relative;
+  margin-bottom: 1rem;
   background-color: var(--white);
   width: 95%;
   box-shadow: 2px 2px 3px var(--black);
@@ -84,6 +98,7 @@ nav .lnr-chevron-up:hover {
 article {
   padding: 0.5rem;
   text-align: center;
+  position: relative;
 }
 article p {
   font-size: 1.5rem;
@@ -91,6 +106,9 @@ article p {
 article h1 {
   font-size: 2em;
   font-family: "Dancing Script", cursive;
+}
+article #close:hover {
+  cursor: pointer;
 }
 #close {
   position: absolute;
@@ -108,27 +126,45 @@ article h1 {
 .button-group span {
   padding: 0.5rem;
   border-radius: 0.3rem;
-  border: 1px solid var(--accent);
+  border: 1px solid var(--light);
+}
+.button-group small {
+  padding-top: 0.5rem;
+  font-size: 1.5em;
+  font-weight: 400;
 }
 .button-group span:hover {
-  background-color: var(--accent);
+  background-color: var(--light);
   cursor: pointer;
 }
 #dropdown {
   display: none;
 }
+#dropdown .nav-links {
+  width: 30%;
+}
+#dropdown .nav-text {
+  width: 70%;
+}
+#dropdown .nav-text p {
+  color: var(--gray);
+}
 .stamp {
   width: 150px;
   height: 100px;
+  margin: 0.5rem;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+.stamp:hover {
+  cursor: pointer;
 }
 .stamp-text {
   display: none;
   position: absolute;
   left: 0;
-  background-color: var(--black);
+  background-color: var(--accent);
   width: 150px;
   height: 100px;
   color: var(--white);
@@ -136,4 +172,16 @@ article h1 {
   text-align: center;
   vertical-align: middle;
   line-height: 100px;
+}
+
+@media (min-width: 500px) {
+  /* body {
+    background-image: linear-gradient(to top, var(--light) 30%, var(--white));
+  } */
+  aside {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }

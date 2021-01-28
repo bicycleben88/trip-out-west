@@ -1,5 +1,4 @@
 $(() => {
-  const $container = $("#container");
   const $modal = $("#modal");
   const $testButton = $("#test");
   const $nextButton = $("#next");
@@ -18,7 +17,9 @@ $(() => {
   let stateIndex = 0;
 
   const makeApiCall = async () => {
-    const response = await fetch("http://localhost:3000/states");
+    const response = await fetch(
+      "https://trip-out-west-api.herokuapp.com/states"
+    );
     const data = await response.json();
     await createModal(data[stateIndex]);
   };
@@ -67,6 +68,7 @@ $(() => {
 
   const toggleDropdown = () => {
     $dropdown.slideToggle();
+    $dropdown.css("display", "flex");
   };
 
   const revealText = (event) => {
