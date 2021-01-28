@@ -19,11 +19,15 @@
   <body>
     <nav>
         <h1>Another Trip Out West</h1>
-        <h2 id="dropdown-button">About The Site</h2>
+        <h2 id="dropdown-button">Click for more Info</h2>
         <div id="dropdown">
-          <p>This is a static webpage. <strong>JavaScript ES6, HTML5, & CSS3</strong> give it content and style. <strong>jQuery</strong> gives it animation and DOM manipulation, & it fetches content with an <strong>AJAX</strong> call to an API I built with <strong>Ruby on Rails</strong></p>
-          <p>Click on any of the states to see pictures and journal entries from an incredible cross-country bicycle tour</p>
+          <div class="nav-text">
+            <h3>About the Site</h3>
+            <p>This is a static webpage. <strong>JavaScript ES6, HTML5, & CSS3</strong> give it content and style. <strong>jQuery</strong> gives it animation and DOM manipulation, & it fetches content with an <strong>AJAX</strong> call to an API I built with <strong>Ruby on Rails</strong></p>
+            <p>Click on any of the states to see pictures and journal entries from an incredible cross-country bicycle tour</p>
+          </div>
           <div class="nav-links">
+            <h3>Contact</h3>
             <a href="https://www.linkedin.com/in/benjamin-alt-higginbotham/" target="#">/in</a>
             <a href="https://github.com/bicycleben88/trip-out-west-frontend" target="#">Git</a>
             <a href="https://my-portfolio.benjamin-higginbotham.vercel.app/" target="#">Folio</a>
@@ -54,21 +58,24 @@
             <div class="stamp-text">Click For Pix!</div>
           </div>
       </aside>
-        <section id="container">
-            <div id="modal">
-              <article>
-                <span class="lnr lnr-cross" id="close"></span>
-                  <h1 id="m-header"></h1>
-                  <p id="m-text"></p>
-                  <img id="m-image" />
-                  <div class="button-group">
-                    <span class="lnr lnr-bicycle" id="prev"></span>
-                    <small id="m-image-text"></small>
-                    <span class="lnr lnr-bicycle" id="next"></span>
-                  </div>
-                </article>
-            </div>
-        </section>
+      <section>
+          <h2>In 2014 I embarked on a very a long bike ride.</h2>
+          <h3>It covered 2,000 miles and took 6 weeks to complete.</h3>
+          <h3>Click on the stamps above and come along on a Virtual Tour to Denver.</h3>
+          <div id="modal">
+            <article>
+              <span class="lnr lnr-cross" id="close"></span>
+                <h1 id="m-header"></h1>
+                <p id="m-text"></p>
+                <img id="m-image" />
+                <div class="button-group">
+                  <span class="lnr lnr-bicycle" id="prev"></span>
+                  <small id="m-image-text"></small>
+                  <span class="lnr lnr-bicycle" id="next"></span>
+                </div>
+              </article>
+          </div>
+      </section>
     </main>
   </body>
 </html>
