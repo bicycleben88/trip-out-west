@@ -2,7 +2,7 @@
 
 > ### Live Earl:
 >
-> https://another-trip-out-west.vercel.app
+> https://trip-out-west-frontend.vercel.app/
 
 ![Landing page to Another Trip Out West](https://i.imgur.com/GrSgGIi.png)
 
