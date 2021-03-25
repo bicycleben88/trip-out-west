@@ -1,6 +1,5 @@
 $(() => {
   const $modal = $("#modal");
-  const $testButton = $("#test");
   const $nextButton = $("#next");
   const $prevButton = $("#prev");
   const $closeButton = $("#close");
@@ -34,7 +33,6 @@ $(() => {
     });
     $mImageText.text(`${statePictures[pictureIndex].location}`);
     $modal.css("display", "flex");
-    $testButton.hide();
   };
 
   const closeModal = () => {
@@ -82,7 +80,6 @@ $(() => {
     $stampText.hide(400);
   };
 
-  $testButton.on("click", makeApiCall);
   $nextButton.on("click", showNextPicture);
   $prevButton.on("click", showPrevPicture);
   $closeButton.on("click", closeModal);
